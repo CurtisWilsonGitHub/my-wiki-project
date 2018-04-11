@@ -39,7 +39,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'factory_girl_rails' , '~> 4.0'
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -67,3 +67,5 @@ gem 'devise'
 gem 'faker'
 
 gem 'figaro', '1.0'
+
+gem 'simplecov', require: false, group: :test

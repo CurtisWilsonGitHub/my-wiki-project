@@ -1,6 +1,6 @@
 require 'faker'
 
-FactoryGirl.define do
+FactoryBot.define do
 
     pw = Faker::Internet.password
 
@@ -8,6 +8,5 @@ FactoryGirl.define do
       email { Faker::Internet.email }
       password { pw }
       password_confirmation { pw }
-     
     end
   end
