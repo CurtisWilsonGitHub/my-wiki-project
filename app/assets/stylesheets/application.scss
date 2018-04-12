@@ -16,3 +16,22 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.box{
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+    text-align: center;
+}
+
+.indexTopBox{
+    padding: 0 0 10px 0;
+}
+
+.indexPremiumPlan{
+}
+
+.indexFreePlan{
+}
