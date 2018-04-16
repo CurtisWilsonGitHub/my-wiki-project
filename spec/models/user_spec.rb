@@ -21,6 +21,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
+    is { is_expected.to have_many(:wikis) }
+
     context 'validation tests' do
         it 'ensures email presence' do
             user = create(:user)
@@ -69,6 +71,8 @@ RSpec.describe User, type: :model do
             expect(ActionMailer::Base.deliveries.first.to.include?(user.email)).to be_truthy
         end
     end  
+
+    
 end
 
 
