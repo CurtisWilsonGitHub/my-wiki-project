@@ -46,17 +46,22 @@ RSpec.describe WikisController, type: :controller do
   end
 
   describe "POST create" do
+    before do
+      sign_in test_user
+    end
+
     it "increases the number of wikis by 1" do
-      expect{ post :create, params: {wiki: { title: "A new title", body: "A new wiki body", user_id: 1} } }.to change(Wiki,:count).by(1)
+      
+      expect{ post :create, params: {wiki: { title: "A new title", body: "A new wiki body"} } }.to change(Wiki,:count).by(1)
     end
 
     it "assigns the new post to @post" do
-      post :create, params: { wiki: {title: "A new title", body: "A new wiki body", user_id: 1} }
+      post :create, params: { wiki: {title: "A new title", body: "A new wiki body"} }
       expect(assigns(:wiki)).to eq Wiki.last
     end
 
     it "redirects to the new post" do
-      post :create, params: { wiki: {title: "A new title", body: "A new wiki body", user_id: 1} }
+      post :create, params: { wiki: {title: "A new title", body: "A new wiki body"} }
       expect(response).to redirect_to Wiki.last
     end
   end
