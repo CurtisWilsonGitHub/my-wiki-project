@@ -40,6 +40,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem "factory_bot_rails"
+  gem 'pundit-matchers', '~> 1.4.1'
 end
 
 group :development do
@@ -69,3 +70,6 @@ gem 'faker'
 gem 'figaro', '1.0'
 
 gem 'simplecov', require: false, group: :test
+
+gem 'pundit'
+

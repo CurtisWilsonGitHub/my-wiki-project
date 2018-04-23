@@ -1,6 +1,8 @@
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'simplecov'
+require "pundit/rspec"
+require 'pundit/matchers'
 SimpleCov.start
 
 
@@ -101,4 +103,6 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+
 end
