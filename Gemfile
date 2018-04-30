@@ -73,3 +73,6 @@ gem 'simplecov', require: false, group: :test
 
 gem 'pundit'
 
+gem 'stripe'
+
+
