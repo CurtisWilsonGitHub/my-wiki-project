@@ -4,7 +4,8 @@ class UsersController < ApplicationController
         if current_user.id == params[:user_id].to_i
             current_user.member!
             redirect_to edit_user_registration_path(current_user)
+        else
+          flash[:alert] = "There was an error downgrading. Please try again"
         end
-        # TODO add error alert
     end
 end
