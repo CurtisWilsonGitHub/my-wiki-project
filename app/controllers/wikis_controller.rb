@@ -24,9 +24,9 @@ class WikisController < ApplicationController
   end
 
   def create
-    
-    @wiki = Wiki.new(wiki_params)
-    @wiki.user = current_user
+
+    #due to association this will create the wiki associated to current_user
+    @wiki = current_user.wikis.new(wiki_params)
     authorize @wiki
 
     if @wiki.save

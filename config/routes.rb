@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only:[] do
-    post '/upgrade' => 'upgrades#upgrade', as: :upgrade
-    post '/downgrade' => 'upgrades#downgrade', as: :downgrade
+    post :downgrade
   end
 
   get 'about' => 'welcome#about'

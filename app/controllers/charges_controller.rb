@@ -13,11 +13,7 @@ class ChargesController < ApplicationController
       currency: 'usd'
     )
 
-    #need to rework this, ask mentor  how to do this better
-    user = current_user
-    
-    user.role = "premium" 
-    user.save
+    current_user.premium!
  
     flash[:notice] = "Thanks for all the money, #{current_user.email}! Feel free to pay me again."
     redirect_to edit_user_registration_path(current_user)

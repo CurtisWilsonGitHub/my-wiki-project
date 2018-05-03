@@ -46,7 +46,7 @@
   <p>Upgrade to premium status to create private wikis!</p> 
   <%= link_to "Upgrade my account", new_charge_path(current_user), class: 'btn btn-success' %>
 <% else %>
-  <P> Downgrade to standard <%= link_to "member", user_downgrade_path(current_user), method: :downgrade_to_member %> </p> 
+  <P> Downgrade to standard <%= link_to "member", user_downgrade_path(current_user), method: :post  %> </p> 
 <% end %>
 <p><%= link_to "Back", :back %></p>
 
