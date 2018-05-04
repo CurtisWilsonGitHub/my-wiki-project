@@ -8,15 +8,27 @@
           <% end %>
         </ul>
       </div>
+<% end %>
+  <div>
+    <%= form_for @wiki do |f| %>
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :body %>
+        <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>
+      </div>
+      <div class="form-group">
+        <% if current_user.admin? || current_user.premium? %>
+          <div class="form-group">
+            <%= f.label :private, class: 'checkbox' do %>
+              <%= f.check_box :private %> Private wiki
+            <% end %>
+          </div>
+        <% end %>
+        <%= f.submit "Save", class: 'btn btn-success' %>
+      </div>
     <% end %>
-    <%= form_tag(@wiki.errors[:title]) do %>
-      <%= f.label :title %>
-       <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
-    <% end %>
-    <%= form_group_tag(wiki.errors[:body]) do %>
-      <%= f.label :body %>
-      <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
-    <% end %>
-      <%= f.submit "Save", class: 'btn btn-success' %>
-    </div>
+  </div>
 <% end %>
