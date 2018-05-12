@@ -75,4 +75,4 @@ gem 'pundit'
 
 gem 'stripe'
 
-
+gem 'redcarpet'
