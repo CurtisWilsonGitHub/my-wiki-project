@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  #  :lockable, :timeoutable and :omniauthable, 
+  #  :lockable, :timeoutable and :omniauthable,
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
@@ -12,4 +12,9 @@ class User < ApplicationRecord
 
 
   enum role: [ :member, :admin, :premium ]
+
+  def member!
+    super
+    wikis.update_all(private: false)
+  end
 end
