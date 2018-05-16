@@ -2,37 +2,12 @@
 
  <% @wikis.each do |wiki| %>
    <!--TODO ask mentor to go more into detail about current_user and guest user (was getting errors for guest users due to .role being nil) -->
-
-  <% if wiki.private? && current_user && ( user_is_admin? || user_is_premium?) %>
     <div class="media">
       <div class="media-body">
         <h4 class="media-heading">
           <%= link_to wiki.title, wiki %>
-          <% if policy(@wikis).update? %>
-            <%= link_to "Edit", edit_wiki_path(wiki), class: 'btn btn-success' %>
-          <% end %>
-          <% if policy(@wikis).destroy? %>
-            <%= link_to "Delete Post", wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this wiki?'} %>
-          <% end %>
-        </h4>
-      </div>
-    </div>
-  <% elsif wiki.private == false %>
-    <div class="media">
-      <div class="media-body">
-        <h4 class="media-heading">
-          <%= link_to wiki.title, wiki %>
-          <% if policy(@wikis).update? %>
-            <%= link_to "Edit", edit_wiki_path(wiki), class: 'btn btn-success' %>
-          <% end %>
-          <% if policy(@wikis).destroy? %>
-            <%= link_to "Delete Post", wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this wiki?'} %>
-          <% end %>
         </h4>
       </div>
     </div>
   <% end %>
- <% end %>
- <% if policy(@wikis).new? %>
-   <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
-<% end %>
+ 

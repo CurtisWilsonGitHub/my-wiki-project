@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+    def list_emails
+      @users = User.all
+    end
+
     def downgrade
       if current_user.id == params[:user_id].to_i
           current_user.member!

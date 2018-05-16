@@ -1,0 +1,16 @@
+<% if current_user.premium? || current_user.admin? %>
+  <div class="form-group">
+    <%= form_for [@wiki, Collaborator.new] do |f| %>
+      <h3> Add collaborators</h3>
+      <%= f.label "Available Users " %><br>
+      <%= f.select :user_id, options_from_collection_for_select( User.all,:id, :email) %>
+      <%= f.submit "Add", class: 'btn btn-success' %>
+    <% end %>
+    <%= form_for [@wiki, Collaborator.new] do |f| %>
+      <h3> Add collaborators</h3>
+      <%= f.label "Current Collaborators" %><br>
+      <%= f.select :user_id, options_from_collection_for_select( @wiki.collaborators.all,:user_id, :user_id) %>
+      <%= f.submit "Remove", class: 'btn btn-success' %>
+    <% end %>
+  </div>
+<% end %>
