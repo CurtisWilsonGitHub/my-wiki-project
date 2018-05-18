@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :wikis
   has_many :collaborators
+  #joins users to wiki through collaborators (join table)
+  has_many :wiki_collabs, source: :wiki, through: :collaborators
 
 
 

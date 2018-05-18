@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
   resources :charges, only: [:new, :create]
   resources :wikis do
-    resources :collaborators, only: [:new, :create, :destroy]
+    resources :collaborators, only: [:new, :create] do
+      # making a route so we don't have to pass an id through url
+      collection do
+        delete :destroy
+      end
+    end
   end
 
 

@@ -1,13 +1,14 @@
 <h1>All Wikis</h1>
-
- <% @wikis.each do |wiki| %>
-   <!--TODO ask mentor to go more into detail about current_user and guest user (was getting errors for guest users due to .role being nil) -->
-    <div class="media">
-      <div class="media-body">
-        <h4 class="media-heading">
-          <%= link_to wiki.title, wiki %>
-        </h4>
-      </div>
+<% if user_is_member? || user_is_premium? || user_is_admin? %>
+   <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
+<% end %>
+<% @wikis.each do |wiki| %>
+ <!--TODO ask mentor to go more into detail about current_user and guest user (was getting errors for guest users due to .role being nil) -->
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%= link_to wiki.title, wiki %>
+      </h4>
     </div>
-  <% end %>
- 
+  </div>
+<% end %>

@@ -40,6 +40,18 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+
+    # builds array of users that filters out users that are already collaborators
+    # TODO make following if loop better for n+1
+    @users = []
+    User.all.each do |user|
+      if @wiki.user == user
+      elsif @wiki.users.include?(user)
+      else
+        @users << user
+      end
+    end
+
     authorize @wiki
   end
 
