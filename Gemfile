@@ -76,3 +76,5 @@ gem 'pundit'
 gem 'stripe'
 
 gem 'redcarpet'
+
+gem 'kaminari'

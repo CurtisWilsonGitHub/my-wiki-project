@@ -10,7 +10,8 @@
 
 class WikisController < ApplicationController
   def index
-    @wikis = policy_scope(Wiki)
+    @wikis = Wiki.order('title').page(params[:page]).per(20)
+
   end
 
   def show
@@ -40,9 +41,13 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
-
     # builds array of users that filters out users that are already collaborators
     # TODO make following if loop better for n+1
+    #@current_collabs = @wiki.users
+
+    #@users = Wiki.joins(:users).where(collaborators: {user_id: @current_collabs}).all
+    #raise @users.inspect
+
     @users = []
     User.all.each do |user|
       if @wiki.user == user
