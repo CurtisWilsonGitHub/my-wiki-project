@@ -16,4 +16,9 @@ class User < ApplicationRecord
 
 
   enum role: [ :member, :admin, :premium ]
+
+  def member!
+    super
+    wikis.update_all(private: false)
+  end
 end
