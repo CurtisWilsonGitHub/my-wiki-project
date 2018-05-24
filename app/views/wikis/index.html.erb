@@ -2,8 +2,10 @@
 <% if user_is_member? || user_is_premium? || user_is_admin? %>
    <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
 <% end %>
+
+<%= paginate @wikis %>
+
 <% @wikis.each do |wiki| %>
- <!--TODO ask mentor to go more into detail about current_user and guest user (was getting errors for guest users due to .role being nil) -->
   <div class="media">
     <div class="media-body">
       <h4 class="media-heading">
