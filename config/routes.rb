@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :charges, only: [:new, :create]
   resources :wikis do
     resources :collaborators, only: [:new, :create] do
-      # making a route so we don't have to pass an id through url
+      # making a route so we don't have to pass an id through url in order to allow the user to remove collaborators from private wikis.
       collection do
         delete :destroy
       end
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :users, only:[] do
     post :downgrade
+    delete :downgrade
   end
 
   get 'about' => 'welcome#about'

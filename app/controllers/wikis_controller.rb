@@ -41,21 +41,12 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
-    # builds array of users that filters out users that are already collaborators
-    # TODO make following if loop better for n+1
-    #@current_collabs = @wiki.users
 
-    #@users = Wiki.joins(:users).where(collaborators: {user_id: @current_collabs}).all
-    #raise @users.inspect
 
-    @users = []
-    User.all.each do |user|
-      if @wiki.user == user
-      elsif @wiki.users.include?(user)
-      else
-        @users << user
-      end
-    end
+    # creates an array of users to be excluded from the 'current collaborators' drop menu
+    current_collab_ids = @wiki.users.collect(&:id)+[current_user.id]
+    @users = User.where.not(id: current_collab_ids)
+
     authorize @wiki
   end
 
