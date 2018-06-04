@@ -17,6 +17,10 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+.splashbox{
+  height: 100%;
+}
+
 .box{
     background-color: #444;
     color: #fff;
@@ -26,12 +30,24 @@
     text-align: center;
 }
 
-.indexTopBox{
+.indexContent{
     padding: 0 0 10px 0;
+    height: 50%
 }
 
-.indexPremiumPlan{
+.indexContent > h4{
+  text-align: left;
 }
 
-.indexFreePlan{
+.indexSignIn{
+  margin: 20px;
+}
+
+.indexSignUp{
+  margin: 20px;
+}
+
+.indexList{
+  font-size: 16px;
+  text-align: left;
 }

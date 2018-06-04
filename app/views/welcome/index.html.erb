@@ -1,25 +1,29 @@
 
 <div class = "indexHeader">
-    <h1>My-Wiki-Project: Social, Markdown Wikis</h1>
+    <h2>Lorempedia: Social, Markdown Wikis. Mostlly a bunch of random lorem words.</h2>
 </div>
 
-<div class ="row indexTopBox">
-    <div class = "box indexContent col-lg-12">
-        <h2>Create and share Markdown Wikis</h2>
+<div class ="row splashbox">
+    <div class = "box indexContent col-lg-6">
+        <h2>Create Wikis and edit with Markdown</h2>
+        <h4>Checkout out our wikis! They conists mostly of random lorem words and one wiki that demostrates Markdown functionality!</h4>
+        <ul class = "indexList">
+          <li>Donec ut laoreet nibh. Aliquam sed nunc et orci commodo.</li>
+          <li>Praesent elementum, justo id hendrerit commodo, ante quam laoreet nisi.</li>
+          <li>Curabitur lobortis magna id urna mattis ultricies. Etiam sodales mi.</li>
+          <li>Sed tempor mattis placerat. Etiam tincidunt eu mauris nec rutrum.</li>
+          <li>Nullam et felis sed sem condimentum dignissim. Donec vel sagittis.</li>
+          <li>Vivamus ultrices ipsum at nisl rutrum tristique. In hac habitasse.</li>
+        </ul>
+        <br/>
+    </div>
+    <div class = "box col-lg-5 indexSignUp">
+        <p> Sign up to create wikis. </p>
         <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %>
     </div>
-</div>
 
-<div class ="row indexBottomBox">
-    <div class = "box col-lg-5 indexFreePlan">
-        <p> Create as may public wikis as you want! </p>
+    <div class = "box col-lg-5 indexSignIn">
+        <p> Sign into existing accoun. </p>
+        <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %>
     </div>
-
-    <div class = " col-lg-2"></div>
-
-    <div class = "box col-lg-5 indexPremiumPlan">
-        <p> Create Private Wikis! </p>
-    </div>
-
 </div>
-
