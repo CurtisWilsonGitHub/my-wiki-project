@@ -12,7 +12,7 @@ Lorempedia is a wiki application that allows users to create wiki and format wik
 * Integrate Redcarpet Markdown rendering gem.
 
 
-##Technologies
+## Technologies
 * Rails
 * Ruby on Rails: 5.1.4
 * Devise
@@ -21,7 +21,7 @@ Lorempedia is a wiki application that allows users to create wiki and format wik
 * Kaminari
 * Redcarpet
 
-##Deployment
+## Deployment
 
 1. Clone repository
 2. Run bundle install
