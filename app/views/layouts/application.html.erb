@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyWikiProject</title>
+    <title>Lorempedia</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale = 1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +11,7 @@
   <body>
     <div class = "container">
       <ul class = "nav nav-tabs">
-        <li><%= link_to "My-Wiki-Project", root_path %></li>
+        <li><%= link_to "Lorempedia", root_path %></li>
         <li><%= link_to "Wikis Listings", index_path %></li>
         <li><%= link_to "About", about_path %></li>
         <% if user_signed_in? %>
@@ -22,7 +22,7 @@
           <li> <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %></li>
           <li> <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %></li>
         <% end %>
-      </ul> 
+      </ul>
 
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
@@ -40,6 +40,6 @@
        <% end %>
 
       <%= yield %>
-    </div> 
+    </div>
   </body>
 </html>

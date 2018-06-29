@@ -18,6 +18,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem 'pundit-matchers', '~> 1.4.1'
   gem 'listen'
+  gem 'sqlite3'
 end
 
 group :production do
