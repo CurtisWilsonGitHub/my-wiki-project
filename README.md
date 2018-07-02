@@ -2,6 +2,8 @@
 
 Lorempedia is a wiki application that allows users to create wiki and format wikis with markdown.
 
+[Live example of application](http://lorempedia.herokuapp.com/)
+
 # Project Objectives
 
 * Create a basic user scheme for Ruby on Rails application.
